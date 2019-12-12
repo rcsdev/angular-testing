@@ -4,7 +4,7 @@ import { isNil, isEmpty } from 'lodash';
 
 
 @Component({
-  selector: 'mysphr-to-do',
+  selector: 'my-to-do',
   templateUrl: './to-do.component.html',
   styleUrls: ['./to-do.component.sass']
 })

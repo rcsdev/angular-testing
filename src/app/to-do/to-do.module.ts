@@ -7,13 +7,15 @@ import { AddToDoComponent } from './add-to-do/add-to-do.component';
 import { ToDoService } from './to-do.service';
 import { EditableToDoComponent } from './editable-to-do/editable-to-do.component';
 import { ReadOnlyToDoComponent } from './read-only-to-do/read-only-to-do.component';
+import { ToDoListComponent } from './to-do-list/to-do-list.component';
 
 @NgModule({
   declarations: [
     ToDoComponent,
     AddToDoComponent,
     EditableToDoComponent,
-    ReadOnlyToDoComponent
+    ReadOnlyToDoComponent,
+    ToDoListComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,7 @@ import { ReadOnlyToDoComponent } from './read-only-to-do/read-only-to-do.compone
     HttpClientModule
   ],
   exports: [
-    AddToDoComponent
+    ToDoListComponent
   ],
   providers: [
     ToDoService

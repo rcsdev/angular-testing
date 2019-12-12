@@ -1,0 +1,15 @@
+<h1>My To-Do List!</h1>
+
+<div *ngIf="toDoList && !toDoList.length">
+  <h1>Add some To-Do's!</h1>
+</div>
+
+<my-add-to-do (createToDo)="addTodo($event)"></my-add-to-do>
+
+<my-to-do 
+  *ngFor="let toDo of toDoList" 
+  [toDo]="toDo"
+  (markToDo)="checkToDo($event)"
+  (updateToDo)="updateToDo($event)"
+  (deleteToDo)="deleteToDo($event)">
+</my-to-do>
