@@ -54,7 +54,9 @@ export class ButtonComponent implements OnInit {
    * whenClicked
    */
   whenClicked() {
-    this.clicked.emit('Button clicked..');
+    if (!this.disabled) {
+      this.clicked.emit('Button clicked..');
+    }
   }
   /**
    * Sets button style
