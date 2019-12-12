@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ToDoComponent } from './to-do/to-do.component';
 import { SharedModule } from '../shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AddToDoComponent } from './add-to-do/add-to-do.component';
@@ -9,6 +10,7 @@ import { ReadOnlyToDoComponent } from './read-only-to-do/read-only-to-do.compone
 
 @NgModule({
   declarations: [
+    ToDoComponent,
     AddToDoComponent,
     EditableToDoComponent,
     ReadOnlyToDoComponent

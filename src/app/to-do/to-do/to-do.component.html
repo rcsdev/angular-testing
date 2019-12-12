@@ -1,0 +1,15 @@
+<my-read-only-to-do 
+    *ngIf="!editMode && toDo"
+    [toDo]="toDo"
+    (checkToDo)="markAsDone($event)"
+    (deleteToDo)="removeToDo($event)"
+    (editToDo)="toggleEditMode()">
+</my-read-only-to-do>
+
+<my-editable-to-do 
+    *ngIf="editMode && toDo"
+    [toDo]="toDo"
+    (saveToDo)="saveToDo($event)"
+    (deleteToDo)="removeToDo($event)"
+    (cancelToDo)="toggleEditMode()">
+</my-editable-to-do>

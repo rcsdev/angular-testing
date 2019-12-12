@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ToDo, emptyToDo } from '../to-do.models';
 
 @Component({
-  selector: 'mysphr-editable-to-do',
+  selector: 'my-editable-to-do',
   templateUrl: './editable-to-do.component.html',
   styleUrls: ['./editable-to-do.component.sass']
 })
