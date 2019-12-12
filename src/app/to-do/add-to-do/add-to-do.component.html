@@ -1,0 +1,16 @@
+<div class="add-todo">
+  <label name="description-label" for="todo-description">
+    Task Description:
+    <input class="todo-desc" type="text" name="todo-description" [value]="description" (change)="updateDescription($event)">
+  </label>
+  <label name="due-date-label" for="todo-due-date">
+    Due Date:
+    <input class="todo-date" type="date" name="todo-due-date" [value]="dueDate | date: 'yyyy-MM-dd'" (change)="updateDueDate($event)">
+  </label>
+  <label name="due-time-label" for="todo-due-time">
+    Hour:
+    <input class="todo-time" type="time" name="todo-due-time" [value]="dueDate | date: 'HH:mm'" (change)="updateDueTime($event)">
+  </label>
+  <my-button [text]="'Add ToDo'" (click)="addToDo($event)" type="Success"></my-button>
+</div>
+
