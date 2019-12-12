@@ -1,0 +1,18 @@
+<section class="todo">
+  <div class="to-do-info">
+    <label [ngClass]="{'task-done': toDo?.status === 'Done'}">{{toDo?.title}}</label>
+    <div class="to-do-status">
+      <label [className]="getDueDateStatus()" *ngIf="toDo?.status !== 'Done'">
+        <strong>Due Date: </strong>{{toDo?.dueDate | date: 'medium'}}
+      </label>
+      <label [className]="getDueDateStatus()" *ngIf="toDo?.status === 'Done'">
+        <strong>Completed At: </strong>{{toDo?.updatedAt | date: 'medium'}}
+      </label>
+    </div>
+  </div>
+  <div class="to-do-buttons">
+    <my-button [text]="getMarkStatus()" (click)="goCheckToDo()" [disabled]="isOldToDo()"></my-button>
+    <my-button [text]="'Edit'" (click)="toggleEditMode()" type="Warning"></my-button>
+    <my-button [text]="'Delete'" (click)="removeToDo()" type="Danger"></my-button>
+  </div>
+</section>

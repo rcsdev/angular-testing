@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddToDoComponent } from './add-to-do/add-to-do.component';
 import { ToDoService } from './to-do.service';
 import { EditableToDoComponent } from './editable-to-do/editable-to-do.component';
+import { ReadOnlyToDoComponent } from './read-only-to-do/read-only-to-do.component';
 
 @NgModule({
   declarations: [
     AddToDoComponent,
-    EditableToDoComponent
+    EditableToDoComponent,
+    ReadOnlyToDoComponent
   ],
   imports: [
     CommonModule,
