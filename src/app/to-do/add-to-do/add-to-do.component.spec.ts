@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddToDoComponent } from './add-to-do.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { element } from 'protractor';
 import { By } from '@angular/platform-browser';
 
 describe('AddToDoComponent', () => {
@@ -64,7 +63,7 @@ describe('AddToDoComponent', () => {
   });
 
   it ('should be able to update the To-Do description via template', () => {
-    let myInput = fixture.debugElement.query(By.css('.todo-desc')).nativeElement;
+    const myInput = fixture.debugElement.query(By.css('.todo-desc')).nativeElement;
     expect(myInput.value).toBe(component.description);
     myInput.value = 'New Task';
     myInput.dispatchEvent(new Event('change'));
@@ -72,7 +71,7 @@ describe('AddToDoComponent', () => {
   });
 
   it ('should be able to update the To-Do dueDate via template', () => {
-    let myInput = fixture.debugElement.query(By.css('.todo-date')).nativeElement;
+    const myInput = fixture.debugElement.query(By.css('.todo-date')).nativeElement;
     expect(new Date(myInput.value).getDay()).toBe(component.dueDate.getDay());
     expect(new Date(myInput.value).getMonth()).toBe(component.dueDate.getMonth());
     expect(new Date(myInput.value).getFullYear()).toBe(component.dueDate.getFullYear());
@@ -83,7 +82,7 @@ describe('AddToDoComponent', () => {
   });
 
   it ('should be able to update the To-Do dueDate time via template', () => {
-    let myInput = fixture.debugElement.query(By.css('.todo-time')).nativeElement;
+    const myInput = fixture.debugElement.query(By.css('.todo-time')).nativeElement;
     const newTime = new Date();
     newTime.setHours(myInput.value.split(':')[0]);
     newTime.setMinutes(myInput.value.split(':')[1]);
@@ -95,4 +94,6 @@ describe('AddToDoComponent', () => {
     expect(component.dueDate.getMinutes()).toEqual(0);
     expect(component.dueDate.getSeconds()).toEqual(59);
   });
+
+
 });
