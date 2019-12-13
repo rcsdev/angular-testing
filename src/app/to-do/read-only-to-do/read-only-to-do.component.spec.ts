@@ -3,6 +3,9 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReadOnlyToDoComponent } from './read-only-to-do.component';
 import { MockComponent } from 'ng-mocks';
 import { ButtonComponent } from 'src/app/shared/button/button.component';
+import { Component, Input } from '@angular/core';
+
+
 
 describe('ReadOnlyToDoComponent', () => {
   let component: ReadOnlyToDoComponent;

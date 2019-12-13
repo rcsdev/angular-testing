@@ -22,7 +22,7 @@ export class ToDoService {
    */
   public getToDos(): Observable<ToDo[]> {
     return this.http.get<ToDo[]>(`${this.API_URL}/todos`);
-  } 
+  }
   /**
    * Deletes a To-Do by its id
    */
@@ -34,8 +34,8 @@ export class ToDoService {
    * @param toDoToAdd ToDo to send to create
    */
   public addToDo(toDoToAdd: ToDo) {
-    let httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-    let options = { headers: httpHeaders };
+    const httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: httpHeaders };
     return this.http.post<ToDo>(`${this.API_URL}/todos/`, toDoToAdd, options);
   }
   /**
@@ -43,8 +43,8 @@ export class ToDoService {
    * @param toDoToUpdate the To-Do to update
    */
   public updateToDo(toDoToUpdate: ToDo) {
-    let httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-    let options = { headers: httpHeaders };
+    const httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
+    const options = { headers: httpHeaders };
     return this.http.patch<ToDo>(`${this.API_URL}/todos/${toDoToUpdate.id}`, toDoToUpdate, options);
   }
   /**
@@ -52,7 +52,7 @@ export class ToDoService {
    * @param toDos To-Do list to update
    */
   public updateToDosStatus(toDos: ToDo[]) {
-    toDos.forEach( (toDo)=>{
+    toDos.forEach( (toDo) => {
       const isDueDateExpired = new Date(toDo.dueDate) < new Date();
       const isToDoDone = toDo.status === 'Done';
       toDo.status = !isToDoDone && isDueDateExpired ? 'Old' : toDo.status;

@@ -8,17 +8,17 @@ import { ToDo, ToDoStatus } from '../to-do.models';
 })
 export class AddToDoComponent {
   /**
-  *  Add new ToDo action event emitter
-  */
+   *  Add new ToDo action event emitter
+   */
   @Output()
   public createToDo: EventEmitter<ToDo>;
   /**
-  *  ToDo description (title)
-  */
+   *  ToDo description (title)
+   */
   public description: string;
   /**
-  *  ToDo task due date
-  */
+   *  ToDo task due date
+   */
   public dueDate: Date;
   /**
    * Constructor
@@ -63,7 +63,7 @@ export class AddToDoComponent {
       status: 'ToDo' as ToDoStatus,
       createdAt: new Date(),
       dueDate: this.dueDate
-    }
+    };
   }
   /**
    * Updates ToDo description
