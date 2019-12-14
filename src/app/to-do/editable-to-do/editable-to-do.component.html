@@ -1,0 +1,21 @@
+<section class="editable-todo"> 
+  <div class="editable-info">
+    <label for="title">
+      <strong>Title: </strong>
+      <input type="text" name="title" [value]="toDo?.title" (change)="updateTitle($event)">
+    </label>
+    <label for="due-date">
+      <strong>Due Date: </strong>
+      <input type="date" name="due-date" [value]="toDo?.dueDate | date: 'yyyy-MM-dd'" (change)="updateDueDate($event)">
+    </label>
+    <label for="due-time">
+      <strong>Time: </strong>
+      <input type="time" name="due-time" [value]="toDo?.dueDate | date: 'HH:mm'" (change)="updateDueTime($event)">
+    </label>
+  </div>
+  <div class="to-do-buttons">
+    <my-button [text]="'Cancel'" (click)="cancelEdit()"></my-button>
+    <my-button [text]="'Save'" (click)="updateToDo()" type="Warning"></my-button>
+    <my-button [text]="'Delete'" (click)="removeToDo()" type="Danger"></my-button>
+  </div>
+</section>
