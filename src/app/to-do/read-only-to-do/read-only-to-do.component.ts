@@ -62,7 +62,9 @@ export class ReadOnlyToDoComponent {
    * Returns true if a ToDo due date has expired
    */
   isOldToDo() {
-    return new Date(this.toDo.dueDate) < new Date();
+    return new Promise<boolean>((resolve) => {
+      resolve(new Date(this.toDo.dueDate) < new Date());
+    });
   }
   /**
    * Helper view method to retrieve current
