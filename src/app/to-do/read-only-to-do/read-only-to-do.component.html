@@ -11,8 +11,8 @@
     </div>
   </div>
   <div class="to-do-buttons">
-    <my-button [text]="getMarkStatus()" (click)="goCheckToDo()" [disabled]="isOldToDo()"></my-button>
-    <my-button [text]="'Edit'" (click)="toggleEditMode()" type="Warning"></my-button>
-    <my-button [text]="'Delete'" (click)="removeToDo()" type="Danger"></my-button>
+    <my-button class="check-btn" [ngClass]="{'disabled': isOldToDo()}" [text]="getMarkStatus()" (click)="goCheckToDo()"></my-button>
+    <my-button class="edit-btn" [text]="'Edit'" (click)="toggleEditMode()" type="Warning"></my-button>
+    <my-button class="delete-btn" [text]="'Delete'" (click)="removeToDo()" type="Danger"></my-button>
   </div>
 </section>
